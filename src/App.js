@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from 'react';
 import Card from './components/Card';
 import ModalPlayer from './components/ModalPlayer';
 import { playersContext } from './contexts/PlayersContext';
-import balle from './assets/balle.png';
 
 import './App.css';
 
@@ -13,17 +12,18 @@ const App = () => {
 		getSortByRank,
 		getSortByLastName,
 		getSortByCountry,
-	} = useContext(playersContext); //Liste des joueurs
+	} = useContext(playersContext); //Context des joueurs
 	const [searchPlayer, setSearchPlayer] = useState(''); //Stockage de la recherche de l'utilisateur
 	const [sortListPlayer, setSortListPlayer] = useState([]); //Liste des joueurs triés
 	const [isSort, setIsSort] = useState(false); //La recherche est active ?
+	const [isOpen, setIsOpen] = useState(false); //La modal est ouverte ?
+	const [idPlayer, setIdPlayer] = useState(0); //ID du joueur selectionné pour la modal
 
 	const whereIsPlayer = () => {
 		let temp = [];
 		if (searchPlayer !== '') {
 			setIsSort(true);
 			for (let i = 0; i < players.length; i++) {
-				console.log('boucle');
 				if (
 					players[i].lastname.includes(searchPlayer) ||
 					players[i].firstname.includes(searchPlayer)
@@ -88,28 +88,41 @@ const App = () => {
 					? sortListPlayer.map((e, key) => (
 							<Card
 								key={key}
+								id={e.id}
 								firstname={e.firstname}
 								lastname={e.lastname}
 								rank={e.data.rank}
 								points={e.data.points}
 								country={e.country.code}
 								picture={e.picture}
+								isOpen={isOpen}
+								setIsOpen={setIsOpen}
+								setIdPlayer={setIdPlayer}
 							/>
 					  ))
 					: players.map((e, key) => (
 							<Card
 								key={key}
+								id={e.id}
 								firstname={e.firstname}
 								lastname={e.lastname}
 								rank={e.data.rank}
 								points={e.data.points}
 								country={e.country.code}
 								picture={e.picture}
+								isOpen={isOpen}
+								setIsOpen={setIsOpen}
+								setIdPlayer={setIdPlayer}
 							/>
 					  ))}
+				<div className={isOpen ? 'launchmodal active' : 'launchmodal'}>
+					<ModalPlayer
+						isOpen={isOpen}
+						setIsOpen={setIsOpen}
+						idPlayer={idPlayer}
+					/>
+				</div>
 			</div>
-			{/* <ModalPlayer /> */}
-			{/* <div className="background"></div> */}
 		</div>
 	);
 };

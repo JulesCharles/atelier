@@ -1,8 +1,16 @@
 import '../styles/Card.css';
+import Modal from './ModalPlayer';
+import { useState, useEffect } from 'react';
 
 const Card = (props) => {
 	return (
-		<div className="card">
+		<div
+			className="card"
+			onClick={() => {
+				props.setIsOpen(!props.isOpen);
+				props.setIdPlayer(props.id);
+			}}
+		>
 			<div className="picture">
 				<img src={props.picture} alt={props.firstname} />
 			</div>
