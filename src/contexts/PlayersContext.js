@@ -4,8 +4,8 @@ import axios from 'axios';
 export const playersContext = createContext();
 
 const PlayerProvider = (props) => {
-	const [players, setPlayers] = useState([]);
-	const [play, setPlay] = useState(false);
+	const [players, setPlayers] = useState([]); //Stokage des données des joueurs
+	const [play, setPlay] = useState(false); //State permettant de surveiller un tri demandé par l'utilisateur
 
 	//Tri par rank
 	const getSortByRank = () => {
@@ -47,10 +47,12 @@ const PlayerProvider = (props) => {
 			.then((data) => setPlayers(data.players));
 	};
 
+	//Au premier lancement du composant, récupération des données
 	useEffect(() => {
 		getData();
 	}, []);
 
+	//Lorsque les données sont modifiés, faire le tri par Rank
 	useEffect(() => {
 		getSortByRank();
 	}, [players]);

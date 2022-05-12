@@ -1,4 +1,5 @@
 import '../styles/ModalPlayer.css';
+import LastMatches from './LastMatches';
 import { useEffect, useState, useContext } from 'react';
 import { playersContext } from '../contexts/PlayersContext';
 
@@ -6,8 +7,6 @@ const ModalPlayer = (props) => {
 	const [dataPlayer, setDataPlayer] = useState([]);
 	const [isLoad, setIsLoad] = useState(false);
 	const { players } = useContext(playersContext);
-
-	// console.log('player modal : ', dataPlayer);
 
 	useEffect(() => {
 		if (props.idPlayer !== 0) {
@@ -58,7 +57,9 @@ const ModalPlayer = (props) => {
 						<div className="points">
 							<div className="firstline">POINTS</div>
 							<div className="secondline">
-								{isLoad ? dataPlayer.data.points : ''}
+								{isLoad
+									? Intl.NumberFormat().format(dataPlayer.data.points)
+									: ''}
 							</div>
 						</div>
 						<div className="country">
@@ -84,7 +85,7 @@ const ModalPlayer = (props) => {
 						<div className="weight">
 							<div className="firstline">WEIGHT</div>
 							<div className="secondline">
-								{isLoad ? dataPlayer.data.weight : ''} kg
+								{isLoad ? dataPlayer.data.weight.toString().slice(0, 2) : ''} kg
 							</div>
 						</div>
 						<div className="height">
@@ -99,8 +100,14 @@ const ModalPlayer = (props) => {
 						</div>
 					</div>
 					<div className="details">
-						<div className="career">CAREER TITLES</div>
-						<div className="list">No available</div>
+						<div className="career">The last 5 matches</div>
+						<div className="list">
+							{isLoad
+								? dataPlayer.data.last.map((el, key) => (
+										<LastMatches key={key} match={el} />
+								  ))
+								: ''}
+						</div>
 					</div>
 				</div>
 			</div>

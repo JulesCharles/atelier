@@ -19,14 +19,19 @@ const App = () => {
 	const [isOpen, setIsOpen] = useState(false); //La modal est ouverte ?
 	const [idPlayer, setIdPlayer] = useState(0); //ID du joueur selectionné pour la modal
 
+	//Recherche des joueurs par prénom ou nom de famille
 	const whereIsPlayer = () => {
 		let temp = [];
 		if (searchPlayer !== '') {
 			setIsSort(true);
 			for (let i = 0; i < players.length; i++) {
 				if (
-					players[i].lastname.includes(searchPlayer) ||
-					players[i].firstname.includes(searchPlayer)
+					players[i].lastname
+						.toLowerCase()
+						.includes(searchPlayer.toLowerCase()) ||
+					players[i].firstname
+						.toLowerCase()
+						.includes(searchPlayer.toLowerCase())
 				) {
 					temp.push(players[i]);
 				}
@@ -84,37 +89,39 @@ const App = () => {
 						</div>
 					</div>
 				</div>
-				{isSort
-					? sortListPlayer.map((e, key) => (
-							<Card
-								key={key}
-								id={e.id}
-								firstname={e.firstname}
-								lastname={e.lastname}
-								rank={e.data.rank}
-								points={e.data.points}
-								country={e.country.code}
-								picture={e.picture}
-								isOpen={isOpen}
-								setIsOpen={setIsOpen}
-								setIdPlayer={setIdPlayer}
-							/>
-					  ))
-					: players.map((e, key) => (
-							<Card
-								key={key}
-								id={e.id}
-								firstname={e.firstname}
-								lastname={e.lastname}
-								rank={e.data.rank}
-								points={e.data.points}
-								country={e.country.code}
-								picture={e.picture}
-								isOpen={isOpen}
-								setIsOpen={setIsOpen}
-								setIdPlayer={setIdPlayer}
-							/>
-					  ))}
+				<div className={isOpen ? 'cache' : 'cardlist'}>
+					{isSort
+						? sortListPlayer.map((e, key) => (
+								<Card
+									key={key}
+									id={e.id}
+									firstname={e.firstname}
+									lastname={e.lastname}
+									rank={e.data.rank}
+									points={e.data.points}
+									country={e.country.code}
+									picture={e.picture}
+									isOpen={isOpen}
+									setIsOpen={setIsOpen}
+									setIdPlayer={setIdPlayer}
+								/>
+						  ))
+						: players.map((e, key) => (
+								<Card
+									key={key}
+									id={e.id}
+									firstname={e.firstname}
+									lastname={e.lastname}
+									rank={e.data.rank}
+									points={e.data.points}
+									country={e.country.code}
+									picture={e.picture}
+									isOpen={isOpen}
+									setIsOpen={setIsOpen}
+									setIdPlayer={setIdPlayer}
+								/>
+						  ))}
+				</div>
 				<div className={isOpen ? 'launchmodal active' : 'launchmodal'}>
 					<ModalPlayer
 						isOpen={isOpen}

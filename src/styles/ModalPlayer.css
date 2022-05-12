@@ -14,20 +14,20 @@
 	justify-content: center;
 	align-items: center;
 	/* width: 100%; */
-	height: 15%;
+	height: 10%;
 	cursor: pointer;
 }
 
 .first {
 	transform: rotate(-45deg) translateX(4px);
 	color: white;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 .second {
 	transform: rotate(45deg) translateX(-4px);
 	color: white;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 .modal {
@@ -35,23 +35,26 @@
 	flex-direction: column;
 	padding-top: 5vh;
 	width: 100%;
-	height: 85%;
+	height: 90%;
 	background-color: white;
 	flex-direction: column;
 }
 
 .headModal {
 	display: flex;
+	flex-direction: column;
 	width: 100%;
 	margin-bottom: 10vh;
 }
 
 .blaze {
-	padding-left: 10%;
-	width: 80%;
+	/* padding-left: 30%; */
+	/* width: 80%; */
 	display: flex;
 	flex-direction: column;
 	text-align: left;
+	align-items: center;
+	margin-bottom: 25px;
 }
 
 .firstname {
@@ -71,8 +74,8 @@
 .flag {
 	display: flex;
 	flex-direction: column;
-	width: 20%;
-	padding-right: 1vw;
+	/* width: 20%; */
+	/* padding-right: 1vw; */
 	justify-content: right;
 	align-items: center;
 }
@@ -111,7 +114,7 @@
 	width: 20%;
 }
 .photo img {
-	width: 30%;
+	width: 55%;
 	position: fixed;
 	bottom: 0;
 	left: -45px;
@@ -125,7 +128,7 @@
 	grid-row-gap: 0px;
 	padding-left: 10%;
 	padding-bottom: 10vh;
-	width: 60%;
+	width: 80%;
 }
 
 .rank {
@@ -139,7 +142,7 @@
 .country {
 	grid-area: 1 / 3 / 2 / 4;
 }
-
+/*
 .birthday {
 	grid-area: 2 / 1 / 3 / 2;
 }
@@ -163,17 +166,234 @@
 .voidTwo {
 	grid-area: 3 / 3 / 4 / 4;
 }
+*/
+
+.voidOne {
+	grid-area: 2 / 1 / 3 / 2;
+}
+
+.birthday {
+	grid-area: 2 / 2 / 3 / 3;
+}
+
+.age {
+	grid-area: 2 / 3 / 3 / 4;
+}
+
+.voidTwo {
+	grid-area: 3 / 1 / 4 / 2;
+}
+
+.weight {
+	grid-area: 3 / 2 / 4 / 3;
+}
+
+.height {
+	grid-area: 3 / 3 / 4 / 4;
+}
 
 .details {
-	width: 20%;
+	display: none;
+	/* width: 20%; */
 }
 
 .career {
-	display: flex;
-	font-size: 1em;
-	font-family: 'Mulish-Semibold';
-	color: var(--thirdcolor);
-	justify-content: center;
+	display: none;
+}
+
+.list {
+	display: none;
+}
+
+@media screen and (min-width: 600px) {
+	.modalplayer {
+		background-color: rgb(0, 0, 0, 0.3);
+		position: fixed;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		/* padding-left: 5%; */
+		z-index: 5;
+		justify-content: center;
+	}
+
+	.close {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* width: 100%; */
+		height: 10%;
+		cursor: pointer;
+	}
+
+	.first {
+		transform: rotate(-45deg) translateX(4px);
+		color: white;
+		font-size: 3em;
+	}
+
+	.second {
+		transform: rotate(45deg) translateX(-4px);
+		color: white;
+		font-size: 3em;
+	}
+
+	.modal {
+		display: flex;
+		flex-direction: column;
+		padding-top: 5vh;
+		width: 100%;
+		height: 90%;
+		background-color: white;
+		flex-direction: column;
+	}
+
+	.headModal {
+		display: flex;
+		flex-direction: unset;
+		width: 100%;
+		margin-bottom: 10vh;
+	}
+
+	.blaze {
+		padding-left: 30%;
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		align-items: unset;
+	}
+
+	.firstname {
+		font-size: 2em;
+		font-family: Montserrat-Bold;
+		color: white;
+		-webkit-text-stroke: 2px var(--firstcolor);
+	}
+
+	.lastname {
+		font-size: 3em;
+		font-family: 'Montserrat-Bold';
+		font-weight: bold;
+		color: var(--firstcolor);
+	}
+
+	.flag {
+		display: flex;
+		flex-direction: column;
+		width: 20%;
+		padding-right: 1vw;
+		justify-content: right;
+		align-items: center;
+	}
+
+	.flagCountry {
+		width: 100%;
+		height: 80%;
+	}
+
+	.flagCountry img {
+		width: 80%;
+		height: auto;
+		-webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+		box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+	}
+
+	.codeCountry {
+		display: flex;
+		width: 100%;
+		height: 20%;
+		justify-content: center;
+		font-family: 'Mulish-SemiBold';
+		font-size: 1.75em;
+		color: var(--thirdcolor);
+		letter-spacing: 0.5em;
+	}
+
+	.contentModal {
+		display: flex;
+		height: 100%;
+		width: 100%;
+	}
+
+	.photo {
+		display: flex;
+		width: 20%;
+	}
+	.photo img {
+		width: 30%;
+		position: fixed;
+		bottom: 0;
+		left: -45px;
+	}
+
+	.infoPlayer {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+		padding-left: 10%;
+		padding-bottom: 10vh;
+		width: 60%;
+	}
+
+	.rank {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	.points {
+		grid-area: 1 / 2 / 2 / 3;
+	}
+
+	.country {
+		grid-area: 1 / 3 / 2 / 4;
+	}
+
+	.birthday {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+
+	.age {
+		grid-area: 2 / 2 / 3 / 3;
+	}
+
+	.voidOne {
+		grid-area: 2 / 3 / 3 / 4;
+	}
+
+	.weight {
+		grid-area: 3 / 1 / 4 / 2;
+	}
+
+	.height {
+		grid-area: 3 / 2 / 4 / 3;
+	}
+
+	.voidTwo {
+		grid-area: 3 / 3 / 4 / 4;
+	}
+
+	.details {
+		display: flex;
+		flex-direction: column;
+		width: 20%;
+	}
+
+	.career {
+		display: flex;
+		font-size: 1em;
+		font-family: 'Mulish-Semibold';
+		color: var(--thirdcolor);
+		justify-content: center;
+	}
+
+	.list {
+		display: flex;
+		margin-top: 10px;
+		font-family: 'Mulish-bold';
+		color: var(--thirdcolor);
+	}
 }
 
 @media screen and (min-width: 900px) {
@@ -258,7 +478,7 @@
 
 	.flagCountry {
 		width: 100%;
-		height: 80%;
+		/* height: 80%; */
 	}
 
 	.flagCountry img {
@@ -290,10 +510,12 @@
 		width: 20%;
 	}
 	.photo img {
-		width: 30%;
+		height: 60%;
+		width: auto;
 		position: fixed;
 		bottom: 0;
-		left: -45px;
+		left: 0px;
+		z-index: 4;
 	}
 
 	.infoPlayer {
@@ -354,6 +576,19 @@
 		color: var(--thirdcolor);
 		justify-content: center;
 	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.resultWin {
+		color: rgb(32, 204, 2);
+	}
+
+	.resultLoss {
+		color: rgb(205, 0, 0);
+	}
 }
 
 @media screen and (min-width: 1450px) {
@@ -371,7 +606,7 @@
 	}
 */
 	.flagCountry img {
-		width: 100%;
+		width: 80%;
 		height: auto;
 	}
 
@@ -381,8 +616,16 @@
 	}
 
 	.career {
+		font-size: 1.5em;
+		letter-spacing: 0.1em;
+	}
+
+	.resultWin {
 		font-size: 1.25em;
-		letter-spacing: 0.2em;
+	}
+
+	.resultLoss {
+		font-size: 1.25em;
 	}
 }
 
@@ -432,5 +675,10 @@
 	.career {
 		font-size: 1.5em;
 		letter-spacing: 0.2em;
+		margin-bottom: 1vh;
+	}
+
+	.list {
+		font-size: 1.5em;
 	}
 }

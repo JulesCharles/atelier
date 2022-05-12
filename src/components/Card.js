@@ -25,7 +25,9 @@ const Card = (props) => {
 					</div>
 					<div className="points">
 						<div className="firstline">POINTS</div>
-						<div className="secondline">{props.points}</div>
+						<div className="secondline">
+							{Intl.NumberFormat().format(props.points)}
+						</div>
 					</div>
 					<div className="country">
 						<div className="firstline">COUNTRY</div>
