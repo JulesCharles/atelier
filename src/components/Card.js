@@ -1,6 +1,4 @@
 import '../styles/Card.css';
-import Modal from './ModalPlayer';
-import { useState, useEffect } from 'react';
 
 const Card = (props) => {
 	return (

@@ -3,7 +3,7 @@
 	text-align: center;
 	min-height: 100vh;
 	font-style: normal;
-	background-image: url('./assets/background.png');
+	background-image: url('./assets/background.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -14,25 +14,29 @@ a {
 	text-decoration: none;
 }
 
+.bottom {
+	display: flex;
+	justify-content: space-around;
+	height: 100%;
+}
+
 .cache {
 	display: none;
+}
+
+.launchmodal {
+	display: none;
+	transition: 0.5s;
+}
+
+.launchmodal.active {
+	display: flex;
 }
 
 .left {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-}
-
-.searchplayer {
-	display: flex;
-	width: 90%;
-	justify-content: center;
-	align-items: center;
-	margin-left: 5%;
-	margin-bottom: 2%;
-	height: 40px;
-	/* margin: 5% 0px 0px 0px; */
 }
 
 #inputsearch {
@@ -51,6 +55,16 @@ a {
 	outline: 2px solid var(--secondcolor);
 }
 
+.searchplayer {
+	display: flex;
+	width: 90%;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5%;
+	margin-bottom: 2%;
+	height: 40px;
+}
+
 .sortlist {
 	display: flex;
 	flex-direction: column;
@@ -64,19 +78,6 @@ a {
 	font-size: 1em;
 	background-color: var(--thirdcolor);
 	border-style: none;
-}
-
-.top {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-}
-
-.bottom {
-	display: flex;
-	justify-content: space-around;
-	height: 100%;
 }
 
 .sortbyrank,
@@ -99,21 +100,18 @@ a {
 	background-color: var(--moredark);
 }
 
-.launchmodal {
-	display: none;
-	transition: 0.5s;
-}
-
-.launchmodal.active {
+.top {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
 
 @media screen and (min-width: 900px) {
-	.searchplayer {
+	.bottom {
 		display: flex;
-		width: 35vw;
-		height: 60px;
-		margin: 0px 0px 50px 10vw;
+		justify-content: space-around;
+		height: 100%;
 	}
 
 	.left {
@@ -136,6 +134,12 @@ a {
 		outline: 2px solid var(--secondcolor);
 	}
 
+	.searchplayer {
+		display: flex;
+		width: 35vw;
+		height: 60px;
+		margin: 0px 0px 50px 10vw;
+	}
 	.sortlist {
 		display: flex;
 		flex-direction: column;
@@ -148,19 +152,6 @@ a {
 		font-size: 1.25em;
 		background-color: var(--thirdcolor);
 		border-style: none;
-	}
-
-	.top {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
-	}
-
-	.bottom {
-		display: flex;
-		justify-content: space-around;
-		height: 100%;
 	}
 
 	.sortbyrank,
@@ -182,14 +173,20 @@ a {
 	.sortbylastname:hover {
 		background-color: var(--moredark);
 	}
+
+	.top {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
 }
 
 @media screen and (min-width: 1450px) {
-	.searchplayer {
+	.bottom {
 		display: flex;
-		width: 35vw;
-		height: 80px;
-		margin: 0px 0px 50px 10vw;
+		justify-content: space-around;
+		height: 100%;
 	}
 
 	#inputsearch {
@@ -200,6 +197,13 @@ a {
 		outline: 1px solid var(--secondcolor);
 	}
 
+	.searchplayer {
+		display: flex;
+		width: 35vw;
+		height: 80px;
+		margin: 0px 0px 50px 10vw;
+	}
+
 	.sortlist {
 		font-size: 1.5em;
 	}
@@ -208,12 +212,6 @@ a {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 100%;
-	}
-
-	.bottom {
-		display: flex;
-		justify-content: space-around;
 		height: 100%;
 	}
 }

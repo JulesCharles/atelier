@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
-export const playersContext = createContext();
+export const playersContext = createContext([]);
 
 const PlayerProvider = (props) => {
 	const [players, setPlayers] = useState([]); //Stokage des données des joueurs

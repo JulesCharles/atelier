@@ -24,7 +24,7 @@ const ModalPlayer = (props) => {
 			</div>
 			<div className="modal">
 				<div className="headModal">
-					<div className="blaze">
+					<div className="flname">
 						<div className="firstname">{dataPlayer.firstname}</div>
 						<div className="lastname">{dataPlayer.lastname}</div>
 					</div>

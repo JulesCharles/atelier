@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Mulish:wght@600;700&display=swap');
 
+.bottomcontent {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
 .card {
 	display: flex;
 	height: 18vh;
 	width: 90%;
-	/* border: solid 2px black; */
 	margin: 0px 0px 25px 5%;
 	background-color: white;
 	cursor: pointer;
@@ -19,13 +24,12 @@
 	justify-content: space-around;
 	width: 70%;
 	height: 100%;
-	/* border: solid 1px red; */
 }
 
-.bottomcontent {
-	display: flex;
-	width: 100%;
-	justify-content: space-around;
+.firstline {
+	font-family: Mulish-Bold;
+	font-size: 0.8em;
+	color: var(--thirdcolor);
 }
 
 .name {
@@ -35,19 +39,6 @@
 	font-size: 1.25em;
 	color: var(--firstcolor);
 	margin-left: 2.5vh;
-}
-
-.firstline {
-	font-family: Mulish-Bold;
-	font-size: 0.8em;
-	color: var(--thirdcolor);
-	/* letter-spacing: 0.15em; */
-}
-
-.secondline {
-	font-family: Montserrat-Bold;
-	font-size: 0.8em;
-	color: var(--firstcolor);
 }
 
 .picture {
@@ -60,6 +51,12 @@
 	height: 100%;
 	object-fit: scale-down;
 	object-position: 50% 0%;
+}
+
+.secondline {
+	font-family: Montserrat-Bold;
+	font-size: 0.8em;
+	color: var(--firstcolor);
 }
 
 .rank,
@@ -75,11 +72,16 @@
 }
 
 @media screen and (min-width: 900px) {
+	.bottomcontent {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+	}
+
 	.card {
 		display: flex;
 		height: 18vh;
 		width: 35vw;
-		/* border: solid 2px black; */
 		margin: 0px 0px 25px 10vw;
 		background-color: white;
 		-webkit-box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.4);
@@ -93,20 +95,6 @@
 		justify-content: space-around;
 		width: 70%;
 		height: 100%;
-		/* border: solid 1px red; */
-	}
-
-	.bottomcontent {
-		display: flex;
-		width: 100%;
-		justify-content: space-around;
-	}
-
-	.name {
-		width: 100%;
-		font-family: 'Montserrat-Bold';
-		font-size: 1.5em;
-		color: var(--firstcolor);
 	}
 
 	.firstline {
@@ -116,9 +104,10 @@
 		letter-spacing: 0.1em;
 	}
 
-	.secondline {
+	.name {
+		width: 100%;
 		font-family: 'Montserrat-Bold';
-		font-size: 1em;
+		font-size: 1.5em;
 		color: var(--firstcolor);
 	}
 
@@ -136,6 +125,12 @@
 		object-position: 50% 0%;
 	}
 
+	.secondline {
+		font-family: 'Montserrat-Bold';
+		font-size: 1em;
+		color: var(--firstcolor);
+	}
+
 	.rank,
 	.points,
 	.country,
@@ -150,6 +145,12 @@
 }
 
 @media screen and (min-width: 1450px) {
+	.bottomcontent {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+	}
+
 	.card {
 		display: flex;
 		height: 18vh;
@@ -171,10 +172,11 @@
 		/* border: solid 1px red; */
 	}
 
-	.bottomcontent {
-		display: flex;
-		width: 100%;
-		justify-content: space-around;
+	.firstline {
+		font-family: Mulish-Bold;
+		font-size: 1.25em;
+		color: var(--thirdcolor);
+		letter-spacing: 0.15em;
 	}
 
 	.name {
@@ -183,19 +185,6 @@
 		font-size: 1.75em;
 		color: var(--firstcolor);
 		margin-left: 5vh;
-	}
-
-	.firstline {
-		font-family: Mulish-Bold;
-		font-size: 1.25em;
-		color: var(--thirdcolor);
-		letter-spacing: 0.15em;
-	}
-
-	.secondline {
-		font-family: Montserrat-Bold;
-		font-size: 1.25em;
-		color: var(--firstcolor);
 	}
 
 	.picture {
@@ -210,6 +199,12 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: 50% 0%;
+	}
+
+	.secondline {
+		font-family: Montserrat-Bold;
+		font-size: 1.25em;
+		color: var(--firstcolor);
 	}
 
 	.rank,
